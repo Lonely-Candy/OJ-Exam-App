@@ -1,0 +1,22 @@
+{
+  "name": "exam_electron",
+  "version": "5.1.0",
+  "description": "exam using",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron .",
+    "packager-dev-w64": "electron-packager . OJ_Exam_local --out app --arch=x64 --overwrite --icon=./icon/favicon.ico --electron-version=13.6.0",
+    "packager-pro-w64": "electron-packager . OJ_Exam --out app --arch=x64 --overwrite --icon=./icon/favicon.ico --electron-version=13.6.0 ",
+    "packager-pro-w32": "electron-packager . OJ_Exam --out app --platform=win32 --arch=ia32 --overwrite --icon=./icon/favicon.ico --electron-version=13.6.0"
+  },
+  "author": "fsy",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^13.6.0"
+  },
+  "dependencies": {
+    "electron-edge-js": "^14.16.1",
+    "node-cmd": "^5.0.0"
+  }
+}
