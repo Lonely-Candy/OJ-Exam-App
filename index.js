@@ -43,7 +43,7 @@ function sendIPToServer() {
     console.log("发送ip到服务器");
     var httpRequest = new XMLHttpRequest();
     // 打开连接
-    httpRequest.open('POST', 'http://172.21.22.252:8060/oj/lockip', true);
+    httpRequest.open('POST', 'http://localhost:8080/oj/lockip', true);
     // 设置请求头注：post方式必须设置请求头（在建立连接后设置请求头）
     httpRequest.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     // 发送请求 将情头体写在send中
