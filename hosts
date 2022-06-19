@@ -1,21 +1,78 @@
-# Copyright (c) 1993-2009 Microsoft Corp.
-#
-# This is a sample HOSTS file used by Microsoft TCP/IP for Windows.
-#
-# This file contains the mappings of IP addresses to host names. Each
-# entry should be kept on an individual line. The IP address should
-# be placed in the first column followed by the corresponding host name.
-# The IP address and the host name should be separated by at least one
-# space.
-#
-# Additionally, comments (such as these) may be inserted on individual
-# lines or following the machine name denoted by a '#' symbol.
-#
-# For example:
-#
-#      102.54.94.97     rhino.acme.com          # source server
-#       38.25.63.10     x.acme.com              # x client host
-# localhost name resolution is handled within DNS itself.
-#	127.0.0.1       localhost
-#	::1             localhost
-127.0.0.1 activate.navicat.com
+127.0.0.1 www.baidu.com
+127.0.0.1 www.so.com
+127.0.0.1 www.soso.com
+127.0.0.1 www.yahoo.com
+127.0.0.1 www.google.com
+127.0.0.1 www.qihoo.com
+127.0.0.1 cn.bing.com
+127.0.0.1 www.youdao.com
+127.0.0.1 so.hao.360.cn
+127.0.0.1 www.sogou.com
+127.0.0.1 hao.360.cn
+127.0.0.1 www.chinaso.com
+127.0.0.1 www.zhongsou.com
+127.0.0.1 cn.bing.com
+127.0.0.1 easou.com
+127.0.0.1 browse.renren.com
+127.0.0.1 www.bing.com
+127.0.0.1 www.wenku.baidu.com
+127.0.0.1 www.hao123.com
+127.0.0.1 www.2345.com
+127.0.0.1 site.baidu.com
+127.0.0.1 tieba.baidu.com
+127.0.0.1 www.csdn.net
+127.0.0.1 123.sogou.com
+127.0.0.1 www.wzdq123.com
+127.0.0.1 hao.qq.com
+127.0.0.1 www.3145.com
+127.0.0.1 www.265.com
+127.0.0.1 qzone.qq.com
+127.0.0.1 page.roboo.com
+127.0.0.1 baike.so.com
+127.0.0.1 blog.sina.com
+127.0.0.1 blog.163.com
+127.0.0.1 blog.sohu.com
+127.0.0.1 blog.csdn.net
+127.0.0.1 jiamiyou.360.cn");
+127.0.0.1 mail.163.com
+127.0.0.1 www.126.com
+127.0.0.1 mail.sohu.com
+127.0.0.1 mail.sina.com.cn
+127.0.0.1 mail.qq.com
+127.0.0.1 mail.aliyun.com
+127.0.0.1 eyun.360.cn
+127.0.0.1 115.com
+127.0.0.1 vdisk.me
+127.0.0.1 www.yunzhijia.com
+127.0.0.1 pan.baidu.com
+127.0.0.1 wangpan007.com
+127.0.0.1 www.weiyun.com
+127.0.0.1 www.ys168.com
+127.0.0.1 hwid1.vmall.com
+127.0.0.1 disk.mail.10086.cn
+127.0.0.1 passport.jd.com
+127.0.0.1 eyun.sh.189.cn
+127.0.0.1 www.wocloud.com.cn
+127.0.0.1 cloud.le.com
+127.0.0.1 cloud.189.cn
+127.0.0.1 yun.uc.cn
+127.0.0.1 www.howfile.com
+127.0.0.1 lixian.xunlei.com
+127.0.0.1 www.jiamiyunpan.com
+127.0.0.1 www.amazon.cn
+127.0.0.1 www.bilibili.com
+127.0.0.1 poj.org
+127.0.0.1 paste.centos.org
+127.0.0.1 www.cnblogs.com
+127.0.0.1 pintia.cn
+127.0.0.1 overview.mail.yahoo.com
+127.0.0.1 reg.mail.188.com
+127.0.0.1 mail.foxmail.com
+127.0.0.1 www.gitee.com
+127.0.0.1 mail.tom.com
+127.0.0.1 mail.google.com
+127.0.0.1 www.126.com
+127.0.0.1 acm.hdu.edu.cn
+127.0.0.1 www.zhihu.com
+127.0.0.1 i.chaoxing.com
+127.0.0.1 www.myquark.cn

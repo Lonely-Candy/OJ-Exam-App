@@ -8,8 +8,6 @@ var path = require('path');
 const exec = require('child_process').exec
 // 引入 iconv-lite 解码模块
 const iconv = require('iconv-lite');
-// 引入主进程模块
-var ipcMain = electron.ipcMain;
 // 系统文件读取模块
 var fs = require('fs');
 // 引入控制应用程序的事件生命周期模块
@@ -18,19 +16,12 @@ var app = electron.app;
 var dialog = electron.dialog;
 // 嵌入 C# 代码依赖模块
 var edge = require('electron-edge-js');
-const { stderr } = require('process');
 // 创建菜单类
 var Menu = electron.Menu;
-// 创建菜单子选项类
-var MenuItem = electron.MenuItem;
 // 主串口类
 var BrowserWindow = electron.BrowserWindow;
-// FTP监控循环定时器
-var myInterval = null;
 // 变量保存对应用窗口的引用
 var mainWindow = null;
-// 作弊标记
-var isCheat = false;
 // 去除安全警告
 process.env['ELECTRON_DISABLE_SECURITY_WARNINGS'] = 'true';
 
@@ -42,10 +33,10 @@ app.on('ready', function () {
 })
 
 /**
- * 当 Electron 初始化完成
+ * 当 Electron 初始化完成-开启监控
  */
 app.whenReady().then(() => {
-	// 监控开启
+	openFirewall();	// 打开防火墙
 	monitorWeb();	// 监控网络
 	moitorUSB();	// 监控U盘
 	moitorFTP();	// 监控FTP
@@ -61,6 +52,15 @@ app.on('quit', function () { })
  * 这种情况通常因为进程崩溃或被杀死。
  */
 app.on('render-process-gone', function () { })
+
+/**
+ * 打开防火墙
+ */
+const openFirewall = function () {
+	// netsh advfirewall set allprofiles state on
+	var cmdCode = "netsh advfirewall set allprofiles state on";
+	runCmdCode(cmdCode, "open firewall failure!", 10000);
+}
 
 /**
  * 网络限制
@@ -192,7 +192,7 @@ const runCmdCode = function (cmdCode, errcode, delayedTime) {
 	exec(cmdCode, { encoding: 'binary' }, (err, stdout, stderr) => {
 		var res = iconv.decode(Buffer.from(stdout, 'binary'), 'cp936');
 		console.log(res);
-		if (res.indexOf("请求的操作需要提升(作为管理员运行)" != -1)) {
+		if (res.indexOf("请求的操作需要提升(作为管理员运行)") != -1) {
 			mainWindow.loadFile("./error/error.html");
 			// 显示提示信息
 			dialog.showMessageBox({
@@ -227,7 +227,7 @@ const initWindow = function () {
 		icon: path.join(__dirname, './icon/favicon.ico'),			// 窗口图标
 		show: false,				// 初始化隐藏
 		webPreferences: {
-			webviewTag: true,		// 必须为 true 才能启用vebview
+			webviewTag: true,		// 必须为 true 才能启用 vebview
 			nodeIntegration: true,	// 启动 node 环境
 			preload: path.join(__dirname, 'index.js')
 		}
@@ -236,14 +236,14 @@ const initWindow = function () {
 	mainWindow.show();		// 显示窗口
 	mainWindow.loadFile('index.html'); // 把index.html加载到窗口里面
 	// 打开窗口时开启调试模式    
-	mainWindow.webContents.openDevTools();
+	// mainWindow.webContents.openDevTools();
 	// 发送消息到渲染进程获取本地 ip
 	mainWindow.webContents.send('lc-active', "getIP");
 	// 禁止用户关闭
 	mainWindow.on('close', function (event) {
 		// 显示提示信息
 		dialog.showMessageBox({
-			message: "请不要关闭考试软件，否则将影响考试，后果需要学生自己承担!",
+			message: "请不要关闭考试软件，否则将无法再次登录考试，后果需要学生自己承担!",
 			type: "error",
 		});
 		event.preventDefault();
